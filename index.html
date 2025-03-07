@@ -1,0 +1,25 @@
+import React from "react";
+
+const SobreMim: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center p-4 max-w-lg mx-auto">
+      {/* Foto */}
+      <img
+        src="/caminho/para/sua-foto.jpg" 
+        alt="Minha Foto"
+        className="w-32 h-32 rounded-full shadow-lg mb-4"
+      />
+      
+      {/* Sobre Mim */}
+      <div className="bg-white p-4 rounded-xl shadow-md text-center">
+        <h2 className="text-xl font-bold mb-2">Sobre Mim</h2>
+        <p className="text-gray-600">
+          Olá! Meu nome é [Seu Nome] e este é um pequeno espaço para falar sobre mim.
+          Aqui você pode adicionar uma breve descrição sobre você, seus interesses ou qualquer informação relevante.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default SobreMim;
