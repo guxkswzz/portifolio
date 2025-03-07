@@ -1,25 +1,104 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="icon" type="image/png" href="https://d2bzx2vuetkzse.cloudfront.net/unshoppable_producs/7d1e2ea8-9bda-4dc0-9efe-2a5e94e8577c.png"> <!-- Ícone da aba do navegador -->
+    <meta property="og:image" content="thumbnail.jpg"> 
+</head>
+<body>
+    <div class="container">
+        <div class="photo"></div>
+        <button class="frutiger-button" id="about-button-1">
+            <div class="inner">
+                <div class="top-white"></div>
+                <span class="text">Sobre Mim</span>
+            </div>
+        </button>
+        <div class="hidden-content" id="about-content-1">
+            <p>Opa! Eu sou o Gustavo, tenho 16 anos e moro em Curitiba/PR
+                gosto muito de programar, jogar Counter Strike, ouvir Cristiano Araújo e
+                amo futebol. :D</p>
+        </div>
+        <button class="frutiger-button" id="about-button-2">
+            <div class="inner">
+                <div class="top-white"></div>
+                <span class="text">O que eu espero?</span>
+            </div>
+        </button>
+        <div class="hidden-content" id="about-content-2">
+            <p>Bom, eu espero que venha coisas boas desse curso.
+            Afinal, já é a segunda vez que faço ele (reprovei),
+            mas aprendi muito com tudo e foi um grande pontapé inicial para gostar de programação e atuar na área.
+            Hoje em dia, já sou dev web e pretendo continuar na área.</p>
+        </div>
+        ,
+        <ul>
+            <li>Cursando o 2° ano do ensino médio.</li>
+            <li>Desenvolvedor web.</li>
+            <li>Sei 6 linguagens de programação e 4 frameworks.</li>
+            <li>Faço Freelances.</li>
+        </ul>
 
-const SobreMim: React.FC = () => {
-  return (
-    <div className="flex flex-col items-center p-4 max-w-lg mx-auto">
-      {/* Foto */}
-      <img
-        src="/caminho/para/sua-foto.jpg" 
-        alt="Minha Foto"
-        className="w-32 h-32 rounded-full shadow-lg mb-4"
-      />
-      
-      {/* Sobre Mim */}
-      <div className="bg-white p-4 rounded-xl shadow-md text-center">
-        <h2 className="text-xl font-bold mb-2">Sobre Mim</h2>
-        <p className="text-gray-600">
-          Olá! Meu nome é [Seu Nome] e este é um pequeno espaço para falar sobre mim.
-          Aqui você pode adicionar uma breve descrição sobre você, seus interesses ou qualquer informação relevante.
-        </p>
-      </div>
+        <button class="frutiger-button" id="github-button" onclick="window.location.href='https://github.com/guxkswzz'">
+            <div class="inner">
+                <div class="top-white"></div>
+                <span class="text">GitHub</span>
+            </div>
+        </button>
+        
+        <button class="frutiger-button" id="instagram-button" onclick="window.location.href='https://instagram.com/guxkswz'">
+            <div class="inner">
+                <div class="top-white"></div>
+                <span class="text">Instagram</span>
+            </div>
+        </button>
+        
+        <button class="frutiger-button" id="linkedin-button" onclick="window.location.href='https://linkedin.com/in/gananias-dev'">
+            <div class="inner">
+                <div class="top-white"></div>
+                <span class="text">LinkedIn</span>
+            </div>
+        </button>
+        
+          <h1>PORTIFÓLIO</h1>          
     </div>
-  );
-};
+    
 
-export default SobreMim;
+    <audio id="background-music" loop>
+        <source src="./src/frutigeraero.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-music');
+            audio.volume = 1.0;
+            
+            function tryPlayAudio() {
+                audio.play().then(() => {
+                    console.log("Música tocando automaticamente.");
+                }).catch(error => {
+                    console.log("Reprodução automática bloqueada. O usuário precisa interagir primeiro.");
+                });
+            }
+
+            tryPlayAudio();
+            document.addEventListener('click', tryPlayAudio, { once: true });
+
+            function toggleContent(buttonId, contentId) {
+                const button = document.getElementById(buttonId);
+                const content = document.getElementById(contentId);
+                button.addEventListener('click', function() {
+                    content.classList.toggle('show');
+                });
+            }
+
+            toggleContent('about-button-1', 'about-content-1');
+            toggleContent('about-button-2', 'about-content-2');
+        });
+    </script>
+</body>
+</html>
